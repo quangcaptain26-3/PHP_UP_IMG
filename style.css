@@ -1,66 +1,192 @@
-/* === Toàn bộ trang === */
+/*
+--- STYLE.CSS CHO DỰ ÁN GALLERY ---
+Nội dung:
+1.  Global Styles & Variables (Kiểu dáng chung & Biến)
+2.  Header & Navigation (Đầu trang)
+3.  Index Page: Image Cards (Trang chủ: Thẻ ảnh)
+4.  Form Styles: Create/Edit Page (Trang tạo/sửa: Biểu mẫu)
+5.  Interactive Elements (Thành phần tương tác)
+6.  Modals (Hộp thoại)
+7.  Responsive Design (Thiết kế đáp ứng)
+*/
+
+/* --- 1. Global Styles & Variables --- */
+:root {
+    --primary-color: #0d6efd;
+    --success-color: #198754;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+    --light-gray: #f8f9fa;
+    --gray-text: #6c757d;
+    --border-color: #dee2e6;
+    --border-radius: 0.5rem; /* 8px */
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
 body {
-    background-color: #f8f9fa;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: var(--light-gray);
+    color: #333;
 }
 
-.gallery-container {
-    padding-top: 50px;
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
 }
 
-/* === Thẻ card dùng cho gallery === */
+/* --- 2. Header & Navigation --- */
+header {
+    background-color: #fff;
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: var(--box-shadow);
+}
+
+/* --- 3. Index Page: Image Cards --- */
 .card {
-    background-color: #ffffff;
+    border-radius: var(--border-radius);
     border: none;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-    height: 100%;
+    box-shadow: var(--box-shadow);
+    /* Thêm transition để mọi thay đổi đều mượt mà */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* HIỆU ỨNG KHI HOVER VÀO CARD */
 .card:hover {
-    transform: scale(1.03);
+    transform: translateY(-8px); /* Nâng card lên cao hơn một chút */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12); /* Đổ bóng đậm hơn */
 }
 
-.card img {
+.card-img-top {
+    aspect-ratio: 4 / 3;
     object-fit: cover;
-    height: 250px;
-    width: 100%;
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+    transition: transform 0.3s ease; /* Thêm transition cho ảnh */
+}
+
+/* HIỆU ỨNG KHI HOVER VÀO CARD, ẢNH SẼ PHÓNG TO NHẸ */
+.card:hover .card-img-top {
+    transform: scale(1.05);
 }
 
 .card-title {
-    text-align: center;
     font-size: 1.1rem;
     font-weight: 600;
-    margin-top: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-/* === Form upload ảnh === */
-.upload-button {
-    text-align: right;
-    margin-bottom: 30px;
+/* HIỆU ỨNG CHO CÁC NÚT BẤM BÊN TRONG CARD */
+.card-body .btn {
+    transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
 }
 
-input[type="file"]::file-selector-button {
-    background-color: #0d6efd;
-    color: #fff;
-    padding: 0.4rem 1rem;
-    border: none;
-    border-radius: 6px;
-    margin-right: 10px;
+.card-body .btn:hover {
+    transform: scale(1.1); /* Phóng to nút khi di chuột vào */
+}
+
+/* --- (Các phần CSS khác giữ nguyên) --- */
+
+/* --- 4. Form Styles: Create/Edit Page --- */
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+/* --- 5. Interactive Elements (Drop Zone & Previews) --- */
+.drop-zone {
+    border: 2px dashed var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 30px;
+    text-align: center;
+    color: var(--gray-text);
     cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
 }
 
-input[type="file"]::file-selector-button:hover {
-    background-color: #0b5ed7;
+.drop-zone__input {
+    display: none; /* Ẩn input file gốc */
 }
 
-/* === Modal xác nhận xoá ảnh === */
-.modal-body img {
-    max-height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 1rem;
+.drop-zone__prompt i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+}
+
+.drop-zone__prompt p {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+}
+
+.drop-zone--over {
+    background-color: #e9f2ff;
+    border-color: var(--primary-color);
+}
+
+#image-preview {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.drop-zone__thumb {
+    width: 100%;
+    max-width: 200px;
+    padding-top: 100%; /* Tạo tỷ lệ vuông 1:1 */
+    border-radius: var(--border-radius);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+.drop-zone__thumb::after {
+    content: attr(data-label);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* --- 6. Modals --- */
+.modal-content {
+    border-radius: var(--border-radius);
+    border: none;
+}
+.modal-header {
+    border-bottom: 1px solid var(--border-color);
+}
+.modal-footer {
+    border-top: 1px solid var(--border-color);
+}
+
+/* --- 7. Responsive Design --- */
+@media (max-width: 768px) {
+    h1.fs-2 {
+        font-size: 1.75rem !important; /* Thu nhỏ tiêu đề trên mobile */
+    }
+}
+
+@media (max-width: 576px) {
+    /* Tăng khoảng cách trên mobile để dễ nhìn hơn */
+    main.py-5 {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
 }

@@ -1,0 +1,91 @@
+/*
+--- STYLE.CSS CHO DỰ ÁN MASONRY GALLERY ---
+*/
+
+/* === 1. Kiểu dáng chung & Biến màu === */
+:root {
+    --primary-color: #0d6efd;
+    --light-gray: #f8f9fa;
+    --border-color: #dee2e6;
+    --border-radius: 0.5rem; /* 8px */
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    --box-shadow-hover: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: var(--light-gray);
+    color: #333;
+}
+
+/* === 2. Bố cục Masonry & Card ảnh === */
+#masonry-container {
+    margin: 0 auto;
+}
+
+.grid-item {
+    /* Bỏ padding mặc định của Bootstrap, Masonry sẽ dùng `gutter` để tạo khoảng cách */
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    
+    /* Hiệu ứng mượt mà khi Masonry sắp xếp lại vị trí */
+    transition: left 0.4s ease, top 0.4s ease;
+}
+
+.grid-item .card {
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    overflow: hidden; /* Đảm bảo ảnh bo góc không bị tràn ra ngoài */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-img-top {
+    width: 100%;
+    height: auto;
+    aspect-ratio: auto; /* Để ảnh giữ nguyên tỷ lệ gốc */
+    object-fit: cover;
+    transition: transform 0.35s ease;
+}
+
+.card-title {
+    font-size: 1rem;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Cắt ngắn tên file nếu quá dài */
+}
+
+/* === 3. Hiệu ứng Hover === */
+
+/* Khi di chuột vào card */
+.grid-item:hover .card {
+    transform: translateY(-8px);
+    box-shadow: var(--box-shadow-hover);
+}
+
+/* Khi di chuột vào card, ảnh sẽ phóng to nhẹ */
+.grid-item:hover .card-img-top {
+    transform: scale(1.05);
+}
+
+/* Hiệu ứng cho các nút bấm bên trong card */
+.card-body .btn {
+    transition: transform 0.2s ease;
+}
+
+.card-body .btn:hover {
+    transform: scale(1.1); /* Phóng to nút khi di chuột vào */
+}
+
+/* === 4. Modal === */
+.modal-content {
+    border-radius: var(--border-radius);
+    border: none;
+}
+.modal-header {
+    border-bottom-color: var(--border-color);
+}
+.modal-footer {
+    border-top-color: var(--border-color);
+}
