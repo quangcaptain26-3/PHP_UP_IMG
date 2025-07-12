@@ -8,7 +8,6 @@
 
 Một thư viện ảnh hiện đại được xây dựng với PHP và MySQL, có bố cục Masonry tương tác, các hành động được xử lý bằng AJAX và giao diện người dùng sạch sẽ, thân thiện.
 
-![Concept Ảnh](https://i.imgur.com/ac9255.jpg)
 
 ---
 
