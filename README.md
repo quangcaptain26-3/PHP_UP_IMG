@@ -54,8 +54,6 @@ Một thư viện ảnh hiện đại được xây dựng với PHP và MySQL, 
 git clone [https://github.com/quangcaptain26-3/PHP_UP_IMG.git](https://github.com/quangcaptain26-3/PHP_UP_IMG.git)
 cd TEN_REPOSITORY_CUA_BAN
 ```
-*(Lưu ý: Thay `TEN_REPOSITORY_CUA_BAN` bằng tên repository thực tế của bạn trên GitHub)*
-
 ### **3. Cài đặt Cơ sở dữ liệu (Database)**
 
 Mở **phpMyAdmin** (hoặc bất kỳ công cụ quản lý CSDL nào), chuyển sang tab **SQL** và chạy các lệnh sau để tạo database và table cần thiết.
