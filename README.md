@@ -60,7 +60,7 @@ Mở **phpMyAdmin** (hoặc bất kỳ công cụ quản lý CSDL nào), chuyể
 
 ```sql
 -- 1. Tạo cơ sở dữ liệu với bảng mã utf8mb4 để hỗ trợ tiếng Việt
-CREATE DATABASE up_img CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+CREATE DATABASE up_img 
 
 -- 2. Chọn cơ sở dữ liệu vừa tạo
 USE up_img;
