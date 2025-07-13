@@ -212,8 +212,6 @@ Table: images
 | id         | int          | NO   | PRI | NULL              |
 | name       | varchar(255) | NO   |     | NULL              |
 | filename   | varchar(255) | NO   |     | NULL              |
-| created_at | timestamp    | NO   |     | CURRENT_TIMESTAMP |
-| updated_at | timestamp    | NO   |     | CURRENT_TIMESTAMP |
 +------------+--------------+------+-----+-------------------+
 ```
 
