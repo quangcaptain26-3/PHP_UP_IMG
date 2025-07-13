@@ -1,143 +1,235 @@
-# 📸 PHP Image Gallery - Masonry Layout
+# 📸 Gallery Project - Thư viện ảnh PHP
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![PHP](https://img.shields.io/badge/PHP-8.x-blue?logo=php)](https://www.php.net/)
-[![MySQL](https://img.shields.io/badge/MySQL-8.0-orange?logo=mysql)](https://www.mysql.com/)
-[![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow?logo=javascript)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-[![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3-purple?logo=bootstrap)](https://getbootstrap.com/)
-
-Một thư viện ảnh hiện đại được xây dựng với PHP và MySQL, có bố cục Masonry tương tác, các hành động được xử lý bằng AJAX và giao diện người dùng sạch sẽ, thân thiện.
-
-
----
-
-## ✨ Các tính năng nổi bật
-
-* **Bố cục Masonry:** Tự động sắp xếp các ảnh có kích thước khác nhau một cách thông minh và đẹp mắt.
-* **Giao diện đáp ứng (Responsive):** Hiển thị hoàn hảo trên mọi thiết bị từ máy tính để bàn đến điện thoại di động.
-* **Tải ảnh kéo-thả:** Giao diện tải ảnh hiện đại, cho phép kéo thả và xem trước ảnh.
-* **Tương tác không tải lại trang:** Xóa ảnh và các hành động khác được xử lý bằng AJAX, mang lại trải nghiệm người dùng mượt mà.
-* **Modal chi tiết ảnh:** Xem thông tin chi tiết của ảnh trong một modal dùng chung hiệu năng cao.
-* **Bảo mật:** Sử dụng Prepared Statements để chống lại các cuộc tấn công SQL Injection.
-* **Dễ dàng cài đặt và sử dụng.**
+[![MySQL](https://img.shields.io/badge/MySQL-8-blue?logo=mysql&logoColor=white)](https://www.mysql.com/)
+[![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3.3-purple?logo=bootstrap)](https://getbootstrap.com/)
+[![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-yellow?logo=javascript&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)
+[![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+[![Font Awesome](https://img.shields.io/badge/Font%20Awesome-6.5.2-blue?logo=fontawesome)](https://fontawesome.com/)
+[![Masonry.js](https://img.shields.io/badge/Masonry.js-layout-orange)](https://masonry.desandro.com/)
+[![imagesLoaded.js](https://img.shields.io/badge/imagesLoaded.js-loading-lightgrey)](https://imagesloaded.desandro.com/)
+[![AJAX](https://img.shields.io/badge/AJAX-dynamic-red)](https://developer.mozilla.org/en-US/docs/Web/Guide/AJAX)
+[![JSON](https://img.shields.io/badge/JSON-data-green)](https://www.json.org/)
+[![Secure Uploads](https://img.shields.io/badge/File%20Upload-Secure-brightgreen)](https://www.php.net/manual/en/features.file-upload.php)
+[![Session Management](https://img.shields.io/badge/Session-Management-orange)](https://www.php.net/manual/en/book.session.php)
 
 ---
 
-## 🛠️ Ngôn ngữ và Công nghệ sử dụng
 
-* **Back-end:** PHP 8+
-* **Cơ sở dữ liệu:** MySQL
-* **Front-end:**
-    * HTML5
-    * CSS3
-    * JavaScript (ES6+)
-    * Bootstrap 5
-    * [Masonry.js](https://masonry.desandro.com/) - Cho bố cục
-    * [lightgallery.js](https://www.lightgalleryjs.com/) - Cho tính năng xem ảnh (Lightbox)
-    * [imagesLoaded](https://imagesloaded.desandro.com/) - Hỗ trợ Masonry
+Một ứng dụng web thư viện ảnh hiện đại được xây dựng bằng PHP thuần, cho phép người dùng tải lên, quản lý và xem ảnh với giao diện đẹp mắt và tính năng drag & drop.
 
----
+## 🚀 Công nghệ sử dụng
 
-## 🚀 Cài đặt và Khởi chạy
+### Backend
+- **PHP** - Ngôn ngữ chính cho server-side logic
+- **MySQL** - Cơ sở dữ liệu lưu trữ thông tin ảnh
+- **MySQLi** - Extension PHP để kết nối và thao tác với MySQL
 
-Để chạy dự án này trên máy của bạn, hãy làm theo các bước sau:
+### Frontend
+- **HTML5** - Cấu trúc trang web
+- **CSS3** - Styling và animations
+- **JavaScript (ES6+)** - Tính năng tương tác
+- **Bootstrap 5.3.3** - Framework UI responsive
+- **Font Awesome 6.5.2** - Icon library
 
-### **1. Yêu cầu**
+### JavaScript Libraries
+- **Masonry.js** - Responsive grid layout
+- **imagesLoaded.js** - Image loading detection
+- **Vanilla JavaScript** - Drag & drop functionality
 
-* Một môi trường server web như **XAMPP**, **WAMP** hoặc **MAMP**.
-* PHP 7.4 hoặc mới hơn.
-* MySQL hoặc MariaDB.
+### Công nghệ khác
+- **AJAX** - Asynchronous operations
+- **JSON** - Data exchange format
+- **Session Management** - User session handling
+- **File Upload** - Multipart form data handling
 
-### **2. Sao chép dự án**
+## 🔒 Tính năng bảo mật
 
+### SQL Injection Protection
+- **Prepared Statements** - Sử dụng MySQLi prepared statements cho mọi truy vấn
+- **Parameter Binding** - Bind parameters để tránh SQL injection
+- **Input Validation** - Kiểm tra và xác thực dữ liệu đầu vào
+
+### File Upload Security
+- **File Type Validation** - Chỉ cho phép upload file ảnh (JPG, PNG, GIF)
+- **File Size Limits** - Giới hạn kích thước file tối đa 5MB
+- **Unique Filename Generation** - Tạo tên file duy nhất với `uniqid()`
+- **Safe File Handling** - Kiểm tra file existence trước khi xử lý
+
+### Data Security
+- **HTML Escaping** - Sử dụng `htmlspecialchars()` để tránh XSS
+- **Input Sanitization** - Làm sạch dữ liệu với `trim()`
+- **Error Handling** - Xử lý lỗi an toàn với try-catch blocks
+- **Transaction Management** - Sử dụng database transactions
+
+### Session Security
+- **Session Management** - Quản lý session an toàn
+- **Flash Messages** - Thông báo tạm thời qua session
+- **Secure Headers** - Thiết lập headers bảo mật
+
+## 🛠️ Cài đặt và chạy dự án
+
+### Yêu cầu hệ thống
+- PHP 7.4 trở lên
+- MySQL 5.7 trở lên
+- Web server (Apache/Nginx)
+- Extension PHP: mysqli, gd
+
+### Bước 1: Clone dự án
 ```bash
-git clone [https://github.com/quangcaptain26-3/PHP_UP_IMG.git](https://github.com/quangcaptain26-3/PHP_UP_IMG.git)
-cd TEN_REPOSITORY_CUA_BAN
+git clone <repository-url>
+cd gallery-project
 ```
-### **3. Cài đặt Cơ sở dữ liệu (Database)**
 
-Mở **phpMyAdmin** (hoặc bất kỳ công cụ quản lý CSDL nào), chuyển sang tab **SQL** và chạy các lệnh sau để tạo database và table cần thiết.
+### Bước 2: Tạo cơ sở dữ liệu
+Chạy các lệnh SQL sau trong MySQL:
 
 ```sql
--- 1. Tạo cơ sở dữ liệu với bảng mã utf8mb4 để hỗ trợ tiếng Việt
-CREATE DATABASE up_img 
+-- Tạo database
+CREATE DATABASE up_img;
 
--- 2. Chọn cơ sở dữ liệu vừa tạo
+-- Sử dụng database
 USE up_img;
 
--- 3. Tạo bảng 'images' để lưu trữ thông tin ảnh
+-- Tạo bảng images
 CREATE TABLE images (
-    id       INT(11) NOT NULL AUTO_INCREMENT,
-    name     VARCHAR(128) NOT NULL,
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
     filename VARCHAR(255) NOT NULL,
-    PRIMARY KEY (id)
 );
 
-
 ```
 
-### **4. Cấu hình kết nối**
-
-Mở file `connect.php` và chỉnh sửa các thông tin kết nối cho phù hợp với môi trường của bạn (thường thì không cần sửa nếu dùng XAMPP mặc định).
+### Bước 3: Cấu hình kết nối database
+Mở file `connect.php` và cập nhật thông tin kết nối:
 
 ```php
-<?php
-$dbHost = "localhost";
-$dbUser = "root";
-$dbPass = ""; // Mật khẩu CSDL của bạn
-$dbName = "up_img";
-
-// ... phần còn lại của file ...
-?>
+$dbHost = "localhost";     // Địa chỉ MySQL server
+$dbUser = "root";          // Username MySQL
+$dbPass = "";              // Password MySQL
+$dbName = "up_img";        // Tên database
 ```
 
-### **5. Khởi chạy**
+### Bước 4: Tạo thư mục uploads
+```bash
+mkdir uploads
+chmod 755 uploads
+```
 
-* Di chuyển toàn bộ thư mục dự án vào thư mục `htdocs` của XAMPP (hoặc `www` của WAMP).
-* Mở trình duyệt và truy cập vào địa chỉ `http://localhost/TEN_THU_MUC_DU_AN`.
+### Bước 5: Chạy dự án
+```bash
+# Sử dụng PHP built-in server
+php -S localhost:8000
+
+# Hoặc đặt trong thư mục web server
+# Ví dụ: /var/www/html/ hoặc /htdocs/
+```
+
+Truy cập `http://localhost:8000` để sử dụng ứng dụng.
+
+## 📁 Cấu trúc dự án
+
+```
+gallery-project/
+├── index.php          # Trang chủ - hiển thị thư viện ảnh
+├── create.php         # Trang tải ảnh lên
+├── edit.php           # Trang chỉnh sửa ảnh
+├── delete.php         # API xóa ảnh (AJAX)
+├── connect.php        # Kết nối cơ sở dữ liệu
+├── style.css          # CSS cho create/edit pages
+├── cssindex.css       # CSS cho trang chủ
+├── uploads/           # Thư mục chứa ảnh
+└── README.md          # Tài liệu dự án
+```
+
+## 💡 Tính năng chính
+
+### 🖼️ Quản lý ảnh
+- Upload ảnh với drag & drop
+- Xem trước ảnh trước khi upload
+- Chỉnh sửa tên và thay thế ảnh
+- Xóa ảnh với xác nhận
+
+### 🎨 Giao diện
+- Responsive design với Bootstrap 5
+- Masonry layout cho gallery
+- Smooth animations và transitions
+- Modal dialogs cho chi tiết ảnh
+
+### ⚡ Trải nghiệm người dùng
+- AJAX operations (không reload trang)
+- Loading states với spinners
+- Flash messages cho feedback
+- Validation realtime
+
+## 🔧 Customization
+
+### Thay đổi giới hạn file
+Chỉnh sửa trong `create.php` và `edit.php`:
+```php
+if ($fileSize > 5 * 1024 * 1024) { // 5MB -> thay đổi số này
+```
+
+### Thêm format file mới
+```php
+$allowedTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
+```
+
+### Tùy chỉnh CSS
+- Chỉnh sửa `style.css` cho trang create/edit
+- Chỉnh sửa `cssindex.css` cho trang chủ
+- Sử dụng CSS variables trong `:root` để thay đổi màu sắc
+
+## 🚀 Deployment
+
+### Production Setup
+1. Đặt file trong web server directory
+2. Cấu hình virtual host
+3. Thiết lập HTTPS
+4. Tối ưu PHP settings:
+   ```ini
+   upload_max_filesize = 5M
+   post_max_size = 5M
+   max_execution_time = 30
+   ```
+
+### Security Checklist
+- [ ] Thay đổi database credentials
+- [ ] Thiết lập file permissions
+- [ ] Bật error logging
+- [ ] Tắt display_errors trong production
+- [ ] Cấu hình backup database
+
+## 📊 Database Schema
+
+```sql
+Table: images
++------------+--------------+------+-----+-------------------+
+| Field      | Type         | Null | Key | Default           |
++------------+--------------+------+-----+-------------------+
+| id         | int          | NO   | PRI | NULL              |
+| name       | varchar(255) | NO   |     | NULL              |
+| filename   | varchar(255) | NO   |     | NULL              |
+| created_at | timestamp    | NO   |     | CURRENT_TIMESTAMP |
+| updated_at | timestamp    | NO   |     | CURRENT_TIMESTAMP |
++------------+--------------+------+-----+-------------------+
+```
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📞 Liên hệ
+
+- **LinkedIn**: [minhquang2604](https://linkedin.com/in/minhquang2604)
+- **GitHub**: [Your GitHub Profile]
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
 
 ---
 
-## 📝 Giấy phép (License)
-
-Dự án này được cấp phép theo **Giấy phép MIT**. Xem chi tiết tại file [LICENSE](LICENSE.md).
-
-<details>
-<summary>Nhấn để xem chi tiết Giấy phép MIT</summary>
-
-```
-MIT License
-
-Copyright (c) 2025 Minh Quang
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
-
-</details>
-
----
-
-## 👨‍💻 Tác giả
-
-Được phát triển và duy trì bởi **Minh Quang**.
-
-* **GitHub:** [@quangcaptain26-3](https://github.com/quangcaptain26-3)
-* **LinkedIn:** [minhquang2604](https://www.linkedin.com/in/minhquang2604)
-
-Cảm ơn bạn đã ghé thăm! Nếu thấy hữu ích, hãy cho dự án một ⭐ nhé.
+**Enjoy coding! 🎉**
